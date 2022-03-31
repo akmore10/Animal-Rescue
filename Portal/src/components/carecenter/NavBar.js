@@ -86,54 +86,35 @@ function Navbar() {
     <PopupState variant="popover" popupId="demo-popup-menu">
       {(popupState) => (
         <React.Fragment>
-          <Button  {...bindTrigger(popupState)} style={{
+        <Button href='/carecenter/viewReports' {...bindTrigger(popupState)} style={{
         color: "white",
         backgroundColor: "#552a9a",
         marginLeft: "10px",
         fontSize: "15px"
-    }}>
-        Animal
+          }}>
+            View Reports
           </Button>
-          <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={()=>{window.location.href="/user/report"}}>Report Animal</MenuItem>
-            <MenuItem onClick={()=>{window.location.href="/user/reportStatus"}}>View Status</MenuItem>
-          </Menu>
+          
         </React.Fragment>
       )}
     </PopupState>
-
+    
     <PopupState variant="popover" popupId="demo-popup-menu">
       {(popupState) => (
         <React.Fragment>
-          <Button  {...bindTrigger(popupState)} style={{
+          <Button href='/carecenter/adoptionrequests' {...bindTrigger(popupState)} style={{
         color: "white",
         backgroundColor: "#552a9a",
         marginLeft: "10px",
         fontSize: "15px"
     }}>
-            Adoption
+            Adoption Request
           </Button>
-          <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={()=>{window.location.href="/user/adoption"}}>Adoption Request</MenuItem>
-            <MenuItem onClick={()=>{window.location.href="/user/adoptionStatus"}}>View Status</MenuItem>
-          </Menu>
+          
         </React.Fragment>
       )}
     </PopupState>
-    <PopupState variant="popover" popupId="demo-popup-menu">
-      {(popupState) => (
-        <React.Fragment>
-          <Button href='/user/store' {...bindTrigger(popupState)} style={{
-        color: "white",
-        backgroundColor: "#552a9a",
-        marginLeft: "10px",
-        fontSize: "15px"
-    }}>
-            Store
-          </Button>
-        </React.Fragment>
-      )}
-    </PopupState>
+    
     <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
         <Tooltip title="Account settings">
               <IconButton

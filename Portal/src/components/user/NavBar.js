@@ -123,7 +123,7 @@ function Navbar() {
     <PopupState variant="popover" popupId="demo-popup-menu">
       {(popupState) => (
         <React.Fragment>
-          <Button href='/user/store' {...bindTrigger(popupState)} style={{
+          <Button  {...bindTrigger(popupState)} style={{
         color: "white",
         backgroundColor: "#552a9a",
         marginLeft: "10px",
@@ -131,6 +131,10 @@ function Navbar() {
     }}>
             Store
           </Button>
+          <Menu {...bindMenu(popupState)}>
+            <MenuItem onClick={()=>{window.location.href='/user/store'}}>Buy Currency</MenuItem>
+            <MenuItem onClick={()=>{window.location.href="/user/adoptionStatus"}}>View Status</MenuItem>
+          </Menu>
         </React.Fragment>
       )}
     </PopupState>

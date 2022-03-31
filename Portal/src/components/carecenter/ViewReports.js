@@ -68,11 +68,11 @@ const columns = [
             e.preventDefault();
 
             axios.post('http://localhost:5000/animal/api/accept',{
-              id:cellValues.row._id,
+              id:cellValues.row.animalId,
               acceptedId:localStorage.getItem('id_user'),
             }).then(res=>{
               setTimeout(()=>{
-                window.location.href = '/carecenter/viewReport'
+                window.location.reload()
               },1000)
             })
           }}
@@ -85,8 +85,15 @@ const columns = [
           color="primary"
           onClick={(e) => {
             e.preventDefault();
-            console.log(cellValues)
-            
+
+            axios.post('http://localhost:5000/animal/api/delete',{
+              id:cellValues.row.animalId,
+              acceptedId:localStorage.getItem('id_user'),
+            }).then(res=>{
+              setTimeout(()=>{
+                window.location.reload()
+              },1000)
+            })
           }}
         >
           Reject
@@ -109,18 +116,18 @@ function Adoption()  {
     axios.get("http://localhost:5000/animal/api/view")
     .then(res=>{
       res = res.data;
+      // console.log(res)
       let count = 1;
-      res.map((item)=>{
-        if (!(item.takenBy =='T')){
-          item["id"]  = count++;
+      res = res.map((item, index) => {
+        // if (!(item.takenBy =='T')){
+          item.id  = count++;
+        console.log(item)
         return item
-        }
       })
-      setData(res);
-    })
+      console.log(res)
+      setData(res) })
     .catch(err=>console.log(err))
-
-  },[])
+    },[])
   return (
     <Box>
     <Navbar/>

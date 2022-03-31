@@ -7,26 +7,6 @@ import { useState,useEffect } from "react";
 import axios from 'axios';
 import Footer from "./Footer";
 
-const rows = [{
-  id:1,
-  name:"German Shepard",
-  age:"5"
-  
-},
-{
-    id:2,
-    name:"German Shepard",
-    age:"3"
-    
-  },
-  {
-    id:3,
-    name:"German Shepard",
-    age:"1"
-    
-  },
-]  
-
 
 
 
